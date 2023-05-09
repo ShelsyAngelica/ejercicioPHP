@@ -76,7 +76,6 @@ DROP TABLE IF EXISTS `clinic_historys`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clinic_historys` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `residence_address` varchar(45) DEFAULT NULL,
   `emergency_number` varchar(10) NOT NULL,
   `diagnostic` varchar(50) NOT NULL,
   `background` varchar(100) NOT NULL,
@@ -84,7 +83,6 @@ CREATE TABLE `clinic_historys` (
   `medical_evaluation` mediumtext NOT NULL,
   `recommended_sessions` int(11) NOT NULL,
   `attending_physician` varchar(45) NOT NULL,
-  `ocupation` varchar(50) NOT NULL,
   `user` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `clinic_historys_FK` (`user`),
@@ -140,7 +138,7 @@ CREATE TABLE `identification_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `description` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +147,41 @@ CREATE TABLE `identification_types` (
 
 LOCK TABLES `identification_types` WRITE;
 /*!40000 ALTER TABLE `identification_types` DISABLE KEYS */;
+INSERT INTO `identification_types` VALUES (1,'cedula de ciudadania'),(2,'tarjeta de identidad'),(3,'cedula de extranjeria'),(4,'registro civil'),(5,'permiso especial de permanencia');
 /*!40000 ALTER TABLE `identification_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `people`
+--
+
+DROP TABLE IF EXISTS `people`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `people` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `surname` varchar(45) NOT NULL,
+  `identification_number` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `cell_phone` varchar(10) NOT NULL,
+  `identification_type` int(11) NOT NULL,
+  `residence_address` varchar(45) DEFAULT NULL,
+  `occupation` varchar(50) DEFAULT NULL,
+  `birthdate` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `people_FK` (`identification_type`),
+  CONSTRAINT `people_FK` FOREIGN KEY (`identification_type`) REFERENCES `identification_types` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `people`
+--
+
+LOCK TABLES `people` WRITE;
+/*!40000 ALTER TABLE `people` DISABLE KEYS */;
+/*!40000 ALTER TABLE `people` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -183,16 +215,12 @@ DROP TABLE IF EXISTS `users`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `surname` varchar(45) DEFAULT NULL,
-  `identification_number` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `cell_phone_number` varchar(10) NOT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `identification_type` int(11) NOT NULL,
+  `id_person` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `users_FK` (`identification_type`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`identification_type`) REFERENCES `identification_types` (`id`)
+  KEY `users_FK` (`id_person`),
+  CONSTRAINT `users_FK` FOREIGN KEY (`id_person`) REFERENCES `people` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -244,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-05 11:07:24
+-- Dump completed on 2023-05-09  1:25:03
