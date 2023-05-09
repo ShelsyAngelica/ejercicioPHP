@@ -65,7 +65,7 @@
                     } else{
                         $sql = "DELETE FROM people WHERE id=?";
                         $stmt= $conexion->prepare($sql);
-                        $stmt->execute([$id]);
+                        $stmt->execute([ $id]);
                         echo "<script> Swal.fire('persona eliminada') </script> ";
                     }
 
