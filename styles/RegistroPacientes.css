@@ -15,10 +15,10 @@ body{
     font-family: 'Quicksand', sans-serif;
 }
 .registro-pacientes{
-    position: fixed;
+    
     top: 60px;
-    right: 0;
-    width: 79vw;
+    
+   
     background: var(--text-input-field);
     height: 100vh;
     padding: 6px 14px;
@@ -28,7 +28,7 @@ body{
     margin: 0 30px;
     background: var(--white);
     padding: 0 10px;
-    height: 85%;
+    
 } 
 .form-registro-pacientes{
     display: grid;
