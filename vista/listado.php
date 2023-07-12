@@ -62,11 +62,7 @@
 
                 
 
-                $sql = "SELECT * FROM people";
-
-                $resultado = $conexion->prepare($sql);
-                $resultado->execute();
-                $people = $resultado->fetchAll();
+                
 
                 
 
@@ -86,6 +82,12 @@
 
 
                 }
+
+                $sql = "SELECT * FROM people";
+
+                $resultado = $conexion->prepare($sql);
+                $resultado->execute();
+                $people = $resultado->fetchAll();
             ?>
 
             <div class="table-responsive">
@@ -120,15 +122,20 @@
                                     <td>{$person["occupation"]}</td>
                                     <td>{$person["email"]}</td>
                                     <td>
+
+                                    
+                                    <div class='d-flex'>
                                         <form action='' method='post' class='form-registro-pacientes'>
                                             <input name='id' type='hidden' value='{$person["id"]}'/>
-                                            <button type='submit' class='btn btn-danger'  name='btnEliminar'>Borrar</button>
+                                            <button type='submit' class='btn btn-danger btn-sm text-white'  name='btnEliminar'>Borrar</button>
                                         </form>
 
-                                        <form action='EdicionPaciente.php' method='post' class='form-edicion-pacientes'>
+                                        <form action='EdicionPaciente.php' method='post' class='form-edicion-pacientes '>
                                             <input name='id' type='hidden' value='{$person["id"]}'/>
-                                            <button type='submit' class='btn btn-warning'  name='btnEditar'>Editar</button>
+                                            <button type='submit' class='btn btn-warning btn-sm  text-white button-edit'  name='btnEditar'>Editar</button>
                                         </form>
+                                    </div>
+                                    
                                     </td>
                                 </tr>
                             ";
@@ -143,7 +150,7 @@
         include("./Footer.php");
     ?>
 
-
+    
     
     <!-- Pooper bootstrap -->
     <script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>

@@ -1,31 +1,31 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
+<footer class="text-center text-lg-start text-muted " >
   <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom " style="background: rgb(59, 113, 202); ">
     <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
+    <div class="me-5 d-none d-lg-block text-white">
       <span>Conéctate con nosotros en las redes sociales:</span>
     </div>
     <!-- Left -->
 
     <!-- Right -->
-    <div>
+    <div >
       <a href="" class="me-4 link-secondary">
-        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-facebook-f text-white" ></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="" class="me-4 link-secondary text-white">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="" class="me-4 link-secondary text-white">
         <i class="fab fa-google"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="" class="me-4 link-secondary text-white">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="" class="me-4 link-secondary text-white">
         <i class="fab fa-linkedin"></i>
       </a>
-      <a href="" class="me-4 link-secondary">
+      <a href="" class="me-4 link-secondary text-white">
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -34,15 +34,15 @@
   <!-- Section: Social media -->
 
   <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
+  <section class="text-white " style="background: rgb(59, 113, 202); ">
+    <div class="container text-center text-md-start pt-5">
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3 text-secondary"></i>fisiohumana
+            <i class="fas fa-gem me-3 text-secondary text-white"></i>fisiohumana
           </h6>
           <p>
           En nuestro consultorio de fisioterapia, nos especializamos en proporcionar una atención integral y personalizada para ayudarte a recuperar y mejorar tu bienestar físico.
@@ -96,13 +96,13 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Contactanos</h6>
-          <p><i class="fas fa-home me-3 text-secondary"></i> Bogota Clinica Colombia Cons 925</p>
+          <p><i class="fas fa-home me-3 text-secondary text-white"></i> Bogota Clinica Colombia Cons 925</p>
           <p>
-            <i class="fas fa-envelope me-3 text-secondary"></i>
+            <i class="fas fa-envelope me-3 text-secondary text-white"></i>
             info@fisiohumana.com
           </p>
-          <p><i class="fas fa-phone me-3 text-secondary"></i> + 57 234 567 88</p>
-          <p><i class="fas fa-print me-3 text-secondary"></i> + 57 234 567 89</p>
+          <p><i class="fas fa-phone me-3 text-secondary text-white"></i> + 57 234 567 88</p>
+          <p><i class="fas fa-print me-3 text-secondary text-white"></i> + 57 234 567 89</p>
         </div>
         <!-- Grid column -->
       </div>
